@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="JavisGPT: A Unified Multi-modal LLM for Sounding-Video Comprehension and Generation">
+    <meta name="keywords" content="audiovisual understanding, audiovisual generation, multimodal large language models, diffusion, unified mllm">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavisGPT</title> 
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+    <link rel="icon" href="./static/images/JavisGPT_cropped_trans.png">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <link rel="stylesheet" href="./static/css/index-gradio.css">
+    <link rel="stylesheet" href="./static/css/live_theme.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <!-- <script src="./static/js/index.js"></script> -->
+</head>
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <!-- Title -->
+                    <h1 class="title is-1 publication-title" style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin-bottom: 5px;">
+                        <img src="./static/images/JavisGPT_cropped_trans.png" width="80" height="60" style="margin-right: 10px;">JavisGPT:
+                    </h1>
+                    <h2 class="title publication-title">A Unified Multi-modal LLM for <br> Sounding-Video Comprehension and Generation</h2>
+
+                    <!-- Authors -->
+                    <div class="is-size-5 publication-authors">   
+                        <span class="author-block"><a href="https://kail8.github.io/">Kai Liu</a><sup>1,2*</sup>,</span>
+                        <span class="author-block"><a href="#">Jungang Li</a><sup>3*</sup>,</span>
+                        <span class="author-block"><a href="#">Yuchong Sun</a><sup>4*</sup>,</span>
+                        <span class="author-block"><a href="https://sqwu.top/">Shengqiong Wu</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="#">Jianzhang Gao</a><sup>4</sup>,</span>
+                        <br>
+                        <span class="author-block"><a href="https://dwan.ch/">Daoan Zhang</a><sup>5</sup>,</span>
+                        <span class="author-block"><a href="https://zwstart.github.io/">Wei Zhang</a><sup>6</sup>,</span>
+                        <span class="author-block"><a href="https://adrianwestmoon.github.io/">Sheng Jin</a><sup>7</sup>,</span>
+                        <span class="author-block"><a href="#">Sicheng Yu</a><sup>8</sup>,</span>
+                        <span class="author-block"><a href="#">Geng Zhan</a><sup>9</sup>,</span>
+                        <span class="author-block"><a href="#">Jiayi Ji</a><sup>2</sup>,</span>
+                        <br>
+                        <span class="author-block"><a href="#">Fan Zhou</a><sup>1</sup>,</span>
+                        <span class="author-block"><a href="https://zheng-lab-anu.github.io/">Liang Zheng</a><sup>10</sup>,</span>
+                        <span class="author-block"><a href="https://yanshuicheng.info/">Shuicheng Yan</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://haofei.vip/">Hao Fei</a><sup>2†</sup>,</span>
+                        <span class="author-block"><a href="https://www.chuatatseng.com/">Tat-Seng Chua</a><sup>2</sup>,</span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+                        <span class="author-block" style="font-size: 18px;"><sup>1</sup>ZJU,</span>
+                        <span class="author-block" style="font-size: 18px;"><sup>2</sup>NUS,</span>
+                        <span class="author-block" style="font-size: 18px;"><sup>3</sup>HKUST(GZ),</span>
+                        <span class="author-block" style="font-size: 18px;"><sup>4</sup>RUC,</span>
+                        <span class="author-block" style="font-size: 18px;"><sup>5</sup>UR,</span>
+                        <span class="author-block" style="font-size: 18px;"><sup>6</sup>HZCU,</span>
+                        <span class="author-block" style="font-size: 18px;"><sup>7</sup>NTU,</span>
+                        <span class="author-block" style="font-size: 18px;"><sup>8</sup>SMU,</span>
+                        <span class="author-block" style="font-size: 18px;"><sup>9</sup>USYD,</span>
+                        <span class="author-block" style="font-size: 18px;"><sup>10</sup>ANU</span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block" style="font-size: 15px;">Published as a <a href="https://neurips.cc/virtual/2025/loc/san-diego/poster/118457">spotlight</a> paper at NeurIPS (<sup>*</sup>Equal Contribution, <sup>†</sup>Correspondence)</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full-width">
+                <p style="font-size: 22px;">
+                    <span style='font-family: "Comic Sans MS"'>TL;DR:</span>
+                    We introduce <b>JavisGPT</b>, a multimodal LLM that can understand audiovisual inputs and simultaneously generate synchronized sounding videos in a unified model. 
+                    <br> <a href="#">All the code, model, and dataset are comming soon.</a>
+                </p>
+                <br>
+                <!-- <video src="./static/teaser.mp4" autoplay controls style="width: 100%; height: auto;"></video> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-2">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        This paper presents JavisGPT, the first unified multimodal large language model (MLLM)
+                        for Joint Audio-Video (JAV) comprehension and generation. JavisGPT adopts a concise
+                        encoder-LLM-decoder architecture, featuring a SyncFusion module for spatio-temporal 
+                        audiovideo fusion and synchrony-aware learnable queries to bridge a pretrained JAV-DiT generator.
+                        This design enables temporally coherent video-audio understanding and generation from
+                        multimodal instructions. We design an effective three-stage training pipeline consisting of
+                        multimodal pretraining, audio-video fine-tuning, and large-scale instruction-tuning, 
+                        to progressively build multimodal comprehension and generation from existing vision-language models.
+                        To support this, we further construct JavisInst-Omni, a high-quality instruction dataset
+                        with over 200K GPT-4o-curated audio-video-text dialogues that span diverse and multi-level
+                        comprehension and generation scenarios. Extensive experiments on JAV comprehension and
+                        generation benchmarks show that JavisGPT outperforms existing MLLMs, particularly in
+                        complex and temporally synchronized settings.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+
+        <br>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+
+        <div class="columns is-centered has-text-centered">
+            <h2 class="title is-2">Technical Description</h2>
+            <br>
+        </div>
+
+        <!-- Architecture -->
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h4 class="title is-3">• JavisGPT Architecture</h4>
+
+                <div class="content has-text-justified">
+                    <img class="columns is-centered has-text-centered" src="./static/images/framework.jpg" alt="Teaser" width="85%"
+                         style="margin:0 auto">
+                    <br>
+                    <figcaption>
+                        <p style="text-align: center; color: #061E61;">
+                            <b>Figure 1:</b> JavisGPT bridges the MLLM backbone and a downstream JAV-DiT decoder via learnable queries,
+                            so as to support understanding and generation for sounding videos in a unified framework.
+                        </p>
+                    </figcaption>
+                    <br>
+                    <p>
+                    <ul>
+                        <li>
+                            <b>Overall Architecture.</b> 
+                            We take the Qwen2.5-VL as the backbone model to inherit its visual perception ability, 
+                            and introduce an audio encoder (BEATs) for audio understanding.
+                            We derive a SyncFusion module to explicitly capture the synchrony between input sounding videos, 
+                            with learnable JavisQuery tokens to align the LLM's hidden states with the DiT's condition space to guide the generation process.
+                        </li>
+                        <li>
+                            <b>Audiovisual Comprehension.</b>
+                            The proposed SyncFusion module injects temporally-aligned audio information into corresponding visual tokens via cross-attention,
+                            resulting in a new modality where each input token represents a sounding event occuring in a specific patch area at a specific time point.
+                        </li>
+                        <li>
+                            <b>Audiovisual Generation.</b>
+                            We adopt and freeze the downstream JAV-DiT model as the decoder for our JavisGPT, where we use a fixed number of learnable tokens 
+                            gather user context and project LLM's output embeddings into the condition space of the JAV-DiT model for targeted sounding video generation.
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dataset -->
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">• JavisInst-Omni Dataset</h2>
+
+                <div class="content has-text-justified">
+                    <img class="columns is-centered has-text-centered" src="./static/images/dataset.jpg" alt="Teaser" width="90%"
+                         style="margin:0 auto">
+                    <br>
+                    <figcaption>
+                        <p style="text-align: center; color: #061E61;">
+                            <b>Figure 2:</b> Large-scale and diversified JavisInst-Omni dataset for instruction tuning on audiovisual understanding and generation.
+                        </p>
+                    </figcaption>
+                    <br>
+                    <p>
+                        To fill the gap in the field, we collected the first large-scale instruction tuning dataset for unified comprehension and generaiton for sounding videos,
+                        which consists of both single-model understanding (i.e., audio understanding and visual understanding) and multi-modal interaction tasks.
+                        Specifically, we leverage ChatGPT-4o to build a high-quality <b>JavisInst-Und</b> subset that covers various scenarios for joint audio-video understanding tasks,
+                        with a <b>JavisInst-Gen</b> subset that supports different contexts and styles for sounding video generation instructions.
+                        All the dataset will be released to facilitate future research in the field.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- <section class="section">
+    <div class="container is-max-desktop">
+
+        <div class="columns is-centered has-text-centered">
+            <h2 class="title is-2">Demonstrations</h2>
+            <br>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <br/>
+                <h3 class="title is-4">• Application-1: High-Resolution Sounding-Video Generation</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper javg-case">
+                        <div style="width: 48%; text-align: center;">
+                            <p>
+                                A group of three small birds with vibrant green plumage and distinctive yellow heads are perched on a branch in a serene woodland area. 
+                                The trees around them have dry, leafless branches and autumnal foliage. 
+                                The birds are engaged in various activities, such as grooming themselves and looking around, while light chirping fills the air.
+                            </p>
+                        </div>
+                        <video style="width: 48%; text-align: center;" controls>
+                            <source src="./static/demos/Fig7-JAVG/case1.mp4">
+                        </video>
+                    </div>
+
+                    <div class="wrapper javg-case">
+                        <div style="width: 48%; text-align: center;">
+                            <p>
+                                In a post-apocalyptic urban landscape, the city is filled with rubble, debris, and damaged structures. 
+                                Tall buildings, power lines, and industrial elements are scattered throughout, creating a dystopian cityscape. 
+                                The sounds of debris falling, broken glass shattering, and occasional explosions or fires can be heard in the background.
+                            </p>
+                        </div>
+                        <video style="width: 48%; text-align: center;" controls>
+                            <source src="./static/demos/Fig7-JAVG/case2.mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <br/>
+                <h3 class="title is-4">• Application-2: Diversified Sounding-Video Generation</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper javg-case">
+                        <div class="label" style="width: 20%">
+                            <div class="row dim1">Industrial</div>
+                            <div class="row dim2">Camera</div>
+                            <div class="row dim3">Ambient,Mechanical</div>
+                            <div class="row dim4">Multiple</div>
+                            <div class="row dim5">Simultaneous</div>
+                        </div>
+                        <div style="width: 48%; text-align: center;">
+                            <p>
+                                In a factory, a person is welding a metal structure while wearing protective gear. 
+                                Various tools and equipment are visible in background. 
+                                The sound of welding is prominent, accompanied by the continuous hum of a heavy engine 
+                                and occasional generic impact sounds.
+                            </p>
+                        </div>
+                        <video style="width: 28%; text-align: center;" controls>
+                            <source src="./static/demos/FigA9-JAVG/case1.mp4">
+                        </video>
+                    </div>
+
+                    <div class="wrapper javg-case">
+                        <div class="label" style="width: 20%">
+                            <div class="row dim1">Urban</div>
+                            <div class="row dim2">Camera</div>
+                            <div class="row dim3">Music,Speech</div>
+                            <div class="row dim4">Multiple</div>
+                            <div class="row dim5">Simultaneous</div>
+                        </div>
+                        <div style="width: 48%; text-align: center;">
+                            <p>
+                                There is a large, enthusiastic crowd illuminated by vibrant lights. 
+                                A live performance features a steel guitar melody, acoustic rhythm guitar chords, 
+                                and passionate male vocals. 
+                                Crowd noises add to the lively ambiance, making it both emotional and spirited.
+                            </p>
+                        </div>
+                        <video style="width: 28%; text-align: center;" controls>
+                            <source src="./static/demos/FigA9-JAVG/case2.mp4">
+                        </video>
+                    </div>
+
+                    <div class="wrapper javg-case">
+                        <div class="label" style="width: 20%">
+                            <div class="row dim1">Natural</div>
+                            <div class="row dim2">Camera</div>
+                            <div class="row dim3">Ambient,Musical</div>
+                            <div class="row dim4">Multiple</div>
+                            <div class="row dim5">Simultaneous</div>
+                        </div>
+                        <div style="width: 48%; text-align: center;">
+                            <p>
+                                An aerial shot captures the rugged coastal landscape with dramatic cliffs and rocky outcrops. 
+                                Waves crash against the rocks. A tambourine adds rhythmic the beat. 
+                                The combination of the natural coastal sounds and the upbeat music enhances the overall 
+                                serene of the scene.
+                            </p>
+                        </div>
+                        <video style="width: 28%; text-align: center;" controls>
+                            <source src="./static/demos/FigA9-JAVG/case3.mp4">
+                        </video>
+                    </div>
+
+                    <div class="wrapper javg-case">
+                        <div class="label" style="width: 20%">
+                            <div class="row dim1">Urban</div>
+                            <div class="row dim2">3D-Animate</div>
+                            <div class="row dim3">Ambient,Mechanical</div>
+                            <div class="row dim4">Multiple</div>
+                            <div class="row dim5">Simultaneous</div>
+                        </div>
+                        <div style="width: 48%; text-align: center;">
+                            <p>
+                                A chaotic battlefield with a tank in the background fires, 
+                                causing a large explosion and fire in one of the buildings. 
+                                The setting is in a realistic 3D animation. 
+                                Soldiers, wearing helmets and military uniforms, are visible, with one aiming a weapon in the foreground. 
+                            </p>
+                        </div>
+                        <video style="width: 28%; text-align: center;" controls>
+                            <source src="./static/demos/FigA9-JAVG/case4.mp4">
+                        </video>
+                    </div>
+
+                    <div class="wrapper javg-case">
+                        <div class="label" style="width: 20%">
+                            <div class="row dim1">Virtual</div>
+                            <div class="row dim2">2D-Animate</div>
+                            <div class="row dim3">Ambient,Musical</div>
+                            <div class="row dim4">Multiple,Off-screen</div>
+                            <div class="row dim5">Simultaneous</div>
+                        </div>
+                        <div style="width: 48%; text-align: center;">
+                            <p>
+                                A fantastical landscape features vibrant, colorful rock formations, a flowing river, 
+                                and autumnal trees set against a surreal backdrop with a large, glowing planet in the sky. 
+                                The scene is animated in vivid 2D, blending natural and alien elements, with music playing in background.
+                            </p>
+                        </div>
+                        <video style="width: 28%; text-align: center;" controls>
+                            <source src="./static/demos/FigA9-JAVG/case5.mp4">
+                        </video>
+                    </div>
+
+                    <div class="wrapper javg-case">
+                        <div class="label" style="width: 20%">
+                            <div class="row dim1">Natural</div>
+                            <div class="row dim2">Camera</div>
+                            <div class="row dim3">Biological</div>
+                            <div class="row dim4">Single</div>
+                            <div class="row dim5">Single</div>
+                        </div>
+                        <div style="width: 48%; text-align: center;">
+                            <p>
+                                A young monkey with light-colored fur, possibly white or cream, 
+                                lies playfully on the ground surrounded by fallen leaves and twigs. 
+                                It has a round, expressive face with large, dark eyes and a small nose, 
+                                and its mouth is open as if it is smiling or making a sound. 
+                            </p>
+                        </div>
+                        <video style="width: 28%; text-align: center;" controls>
+                            <source src="./static/demos/FigA9-JAVG/case6.mp4">
+                        </video>
+                    </div>
+
+                    <div class="wrapper javg-case">
+                        <div class="label" style="width: 20%">
+                            <div class="row dim1">Natural</div>
+                            <div class="row dim2">Camera</div>
+                            <div class="row dim3">Ambient,Biological</div>
+                            <div class="row dim4">Multiple</div>
+                            <div class="row dim5">Simultaneous</div>
+                        </div>
+                        <div style="width: 48%; text-align: center;">
+                            <p>
+                                A small bird, possibly a wren, perches on a branch in a dense forest, 
+                                preening its feathers with brownish plumage and a short tail. 
+                                Rain falls and wind blows through the trees, 
+                                creating a soothing backdrop as the bird cleans and arranges its feathers.
+                            </p>
+                        </div>
+                        <video style="width: 28%; text-align: center;" controls>
+                            <source src="./static/demos/FigA9-JAVG/case7.mp4">
+                        </video>
+                    </div>
+
+                </div>
+
+
+        </div>
+
+    </div>
+</section> -->
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Related Links</h2>
+
+                <div class="content has-text-justified">
+                    <p>
+                        Our code is based on the <a href="https://github.com/LLaVA-VL/LLaVA-NeXT">LLaVA-NeXT</a> repository,
+                        many thanks to their foundational work.
+                        We also require deep interaction with the downstream 
+                        <a href="https://github.com/JavisVerse/JavisDiT">JavisDiT</a> to support audiovisual generation,
+                        and you may refer to this repository for more details.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+<pre><code>@inproceedings{liu2025javisgpt,
+    title={JavisGPT: A Unified Multi-modal LLM for Sounding-Video Comprehension and Generation},
+    author={Kai Liu and Jungang Li and Yuchong Sun and Shengqiong Wu and jianzhang gao and Daoan Zhang and Wei Zhang and Sheng Jin and Sicheng Yu and Geng Zhan and Jiayi Ji and Fan Zhou and Liang Zheng and Shuicheng YAN and Hao Fei and Tat-Seng Chua},
+    booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+    year={2025},
+}</code></pre>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p style="text-align: center;">
+                        The webpage is built based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
