@@ -229,7 +229,7 @@
 </section>
 
 
-<!-- <section class="section">
+<section class="section">
     <div class="container is-max-desktop">
 
         <div class="columns is-centered has-text-centered">
@@ -239,194 +239,452 @@
 
         <div class="columns is-centered">
             <div class="column is-full-width">
-                <br/>
-                <h3 class="title is-4">• Application-1: High-Resolution Sounding-Video Generation</h3>
-                <div class="content has-text-justified">
+                <!--        <h2 class="title is-3">Generated Images</h2>-->
 
-                    <div class="wrapper javg-case">
-                        <div style="width: 48%; text-align: center;">
-                            <p>
-                                A group of three small birds with vibrant green plumage and distinctive yellow heads are perched on a branch in a serene woodland area. 
-                                The trees around them have dry, leafless branches and autumnal foliage. 
-                                The birds are engaged in various activities, such as grooming themselves and looking around, while light chirping fills the air.
-                            </p>
-                        </div>
-                        <video style="width: 48%; text-align: center;" controls>
-                            <source src="./static/demos/Fig7-JAVG/case1.mp4">
-                        </video>
-                    </div>
-
-                    <div class="wrapper javg-case">
-                        <div style="width: 48%; text-align: center;">
-                            <p>
-                                In a post-apocalyptic urban landscape, the city is filled with rubble, debris, and damaged structures. 
-                                Tall buildings, power lines, and industrial elements are scattered throughout, creating a dystopian cityscape. 
-                                The sounds of debris falling, broken glass shattering, and occasional explosions or fires can be heard in the background.
-                            </p>
-                        </div>
-                        <video style="width: 48%; text-align: center;" controls>
-                            <source src="./static/demos/Fig7-JAVG/case2.mp4">
-                        </video>
-                    </div>
-                </div>
 
                 <br/>
-                <h3 class="title is-4">• Application-2: Diversified Sounding-Video Generation</h3>
+                <!--            Example-1-->
+                <h3 class="title is-4">• Example-1: Audio Comprehension (content recognition)</h3>
                 <div class="content has-text-justified">
 
-                    <div class="wrapper javg-case">
-                        <div class="label" style="width: 20%">
-                            <div class="row dim1">Industrial</div>
-                            <div class="row dim2">Camera</div>
-                            <div class="row dim3">Ambient,Mechanical</div>
-                            <div class="row dim4">Multiple</div>
-                            <div class="row dim5">Simultaneous</div>
-                        </div>
-                        <div style="width: 48%; text-align: center;">
-                            <p>
-                                In a factory, a person is welding a metal structure while wearing protective gear. 
-                                Various tools and equipment are visible in background. 
-                                The sound of welding is prominent, accompanied by the continuous hum of a heavy engine 
-                                and occasional generic impact sounds.
-                            </p>
-                        </div>
-                        <video style="width: 28%; text-align: center;" controls>
-                            <source src="./static/demos/FigA9-JAVG/case1.mp4">
-                        </video>
-                    </div>
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
 
-                    <div class="wrapper javg-case">
-                        <div class="label" style="width: 20%">
-                            <div class="row dim1">Urban</div>
-                            <div class="row dim2">Camera</div>
-                            <div class="row dim3">Music,Speech</div>
-                            <div class="row dim4">Multiple</div>
-                            <div class="row dim5">Simultaneous</div>
-                        </div>
-                        <div style="width: 48%; text-align: center;">
-                            <p>
-                                There is a large, enthusiastic crowd illuminated by vibrant lights. 
-                                A live performance features a steel guitar melody, acoustic rhythm guitar chords, 
-                                and passionate male vocals. 
-                                Crowd noises add to the lively ambiance, making it both emotional and spirited.
-                            </p>
-                        </div>
-                        <video style="width: 28%; text-align: center;" controls>
-                            <source src="./static/demos/FigA9-JAVG/case2.mp4">
-                        </video>
-                    </div>
+                        <div class="message-wrap svelte-1uvwjgr">
 
-                    <div class="wrapper javg-case">
-                        <div class="label" style="width: 20%">
-                            <div class="row dim1">Natural</div>
-                            <div class="row dim2">Camera</div>
-                            <div class="row dim3">Ambient,Musical</div>
-                            <div class="row dim4">Multiple</div>
-                            <div class="row dim5">Simultaneous</div>
-                        </div>
-                        <div style="width: 48%; text-align: center;">
-                            <p>
-                                An aerial shot captures the rugged coastal landscape with dramatic cliffs and rocky outcrops. 
-                                Waves crash against the rocks. A tambourine adds rhythmic the beat. 
-                                The combination of the natural coastal sounds and the upbeat music enhances the overall 
-                                serene of the scene.
-                            </p>
-                        </div>
-                        <video style="width: 28%; text-align: center;" controls>
-                            <source src="./static/demos/FigA9-JAVG/case3.mp4">
-                        </video>
-                    </div>
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Is the sound caused by pressure from/against wood?</p>
+                                        <p><audio playsinline="" controls="">
+                                          <source type="audio/wav" src="./static/demos/demo1/Creaking pier.wav"></audio>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
 
-                    <div class="wrapper javg-case">
-                        <div class="label" style="width: 20%">
-                            <div class="row dim1">Urban</div>
-                            <div class="row dim2">3D-Animate</div>
-                            <div class="row dim3">Ambient,Mechanical</div>
-                            <div class="row dim4">Multiple</div>
-                            <div class="row dim5">Simultaneous</div>
-                        </div>
-                        <div style="width: 48%; text-align: center;">
-                            <p>
-                                A chaotic battlefield with a tank in the background fires, 
-                                causing a large explosion and fire in one of the buildings. 
-                                The setting is in a realistic 3D animation. 
-                                Soldiers, wearing helmets and military uniforms, are visible, with one aiming a weapon in the foreground. 
-                            </p>
-                        </div>
-                        <video style="width: 28%; text-align: center;" controls>
-                            <source src="./static/demos/FigA9-JAVG/case4.mp4">
-                        </video>
-                    </div>
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>Yes. It is caused by pressure against wood.</p>
+                                    </span>
+                                </div>
+                            </div>
 
-                    <div class="wrapper javg-case">
-                        <div class="label" style="width: 20%">
-                            <div class="row dim1">Virtual</div>
-                            <div class="row dim2">2D-Animate</div>
-                            <div class="row dim3">Ambient,Musical</div>
-                            <div class="row dim4">Multiple,Off-screen</div>
-                            <div class="row dim5">Simultaneous</div>
                         </div>
-                        <div style="width: 48%; text-align: center;">
-                            <p>
-                                A fantastical landscape features vibrant, colorful rock formations, a flowing river, 
-                                and autumnal trees set against a surreal backdrop with a large, glowing planet in the sky. 
-                                The scene is animated in vivid 2D, blending natural and alien elements, with music playing in background.
-                            </p>
-                        </div>
-                        <video style="width: 28%; text-align: center;" controls>
-                            <source src="./static/demos/FigA9-JAVG/case5.mp4">
-                        </video>
                     </div>
-
-                    <div class="wrapper javg-case">
-                        <div class="label" style="width: 20%">
-                            <div class="row dim1">Natural</div>
-                            <div class="row dim2">Camera</div>
-                            <div class="row dim3">Biological</div>
-                            <div class="row dim4">Single</div>
-                            <div class="row dim5">Single</div>
-                        </div>
-                        <div style="width: 48%; text-align: center;">
-                            <p>
-                                A young monkey with light-colored fur, possibly white or cream, 
-                                lies playfully on the ground surrounded by fallen leaves and twigs. 
-                                It has a round, expressive face with large, dark eyes and a small nose, 
-                                and its mouth is open as if it is smiling or making a sound. 
-                            </p>
-                        </div>
-                        <video style="width: 28%; text-align: center;" controls>
-                            <source src="./static/demos/FigA9-JAVG/case6.mp4">
-                        </video>
-                    </div>
-
-                    <div class="wrapper javg-case">
-                        <div class="label" style="width: 20%">
-                            <div class="row dim1">Natural</div>
-                            <div class="row dim2">Camera</div>
-                            <div class="row dim3">Ambient,Biological</div>
-                            <div class="row dim4">Multiple</div>
-                            <div class="row dim5">Simultaneous</div>
-                        </div>
-                        <div style="width: 48%; text-align: center;">
-                            <p>
-                                A small bird, possibly a wren, perches on a branch in a dense forest, 
-                                preening its feathers with brownish plumage and a short tail. 
-                                Rain falls and wind blows through the trees, 
-                                creating a soothing backdrop as the bird cleans and arranges its feathers.
-                            </p>
-                        </div>
-                        <video style="width: 28%; text-align: center;" controls>
-                            <source src="./static/demos/FigA9-JAVG/case7.mp4">
-                        </video>
-                    </div>
-
                 </div>
+                <!--          End  Example-1-->
 
 
+                <br/>
+                <!--            Example-2-->
+                <h3 class="title is-4">• Example-2: Video Comprehension (temporal relationship)</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr" style="width: 100%;">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>What happened after the person took the food?<br/>
+                                            A. Ate the medicine. B. Tidied up the blanket.<br/>
+                                            C. Put down the cup/glass/bottle. D. Took the box.
+                                        <br/><br/>
+                                        <video src="./static/demos/demo2/ZS9XR.mp4" style="display: inline-block;" width="500" playsinline="" controls=""></video>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>A. Ate the medicine
+                                      </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-2-->
+
+
+                <br/>
+                <!--            Example-3-->
+                <h3 class="title is-4">• Example-3: Audio-Video Comprehension (spatiotemporal relationship)</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>How many instruments in the video did not sound from beginning to end? <br/>
+                                            Answer the question using a single word.
+                                        <br/><br/>
+                                        <video src="./static/demos/demo3/00002617.mp4" style="display: inline-block;" width="500" playsinline="" controls=""></video>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>
+                                        One
+                                      </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-3-->
+
+
+
+                <br/>
+                <!--            Example-4-->
+                <h3 class="title is-4">• Example-4: Audio-Video Comprehension (multi-turn dialogues)</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Answer the following questions based on this sounding video.<br/>What happened in this video?
+                                        <br/><br/>
+                                        <video src="./static/demos/demo4/0E6H9.mp4" style="display: inline-block;" width="300" playsinline="" controls=""></video>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>A man is standing in front of his car with a camera in hand, taking pictures.</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user"></div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>Do you have any idea what type of vehicle it is?</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>I cannot tell from the angle.</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user"></div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>How many people in the video?</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>One man is visible, but there may be someone behind the camera.</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user"></div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>Can you hear any noise?</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Yes, there is some background noise.</p>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-4 -->
+
+
+
+
+                <br/>
+                <!--            Example-5 -->
+                <h3 class="title is-4">• Example-5: Audio-Video Generation</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Make a sounding-video out of this: An aerial view of a
+                                            beach with white sand and green umbrellas lining the
+                                            shore. Turquoise waters with waves crashing onto the
+                                            shore can be seen, and four birds are flying overhead.
+                                            Several people are on the beach. The sound of wind
+                                            blowing and water splashing can be heard throughout</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>Great idea! I will create a sounding-video with the beautiful
+                                            aerial view of the beach with all the described elements.
+                                        <br/><br/>
+                                        <video src="./static/demos/demo5/av_gen.mp4" style="display: inline-block;" width="300" playsinline="" controls=""></video>
+                                    </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-5-->
+
+
+                <br/>
+                <!--            Example-6 -->
+                <h3 class="title is-4">• Example-6: Audio-Video Generation-then-Understanding</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Make a quick clip with a soundtrack. The machine can be
+                                            heard running steadily in the background as a close-up
+                                            shot of a car's engine with a light shining on it, showing
+                                            detailed components and mechanical parts.</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>Sure! I’ll put together a short clip that captures the
+                                            steady hum of the machine, paired with a close-up of
+                                            the car’s engine to showcase its intricate components
+                                        <br/><br/>
+                                        <video src="./static/demos/demo6/gen2und.mp4" style="display: inline-block;" width="300" playsinline="" controls=""></video>
+                                    </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user"></div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>Does the machine producing the steady sound appear in the video?</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Yes. The engine that produces the steady sound appears in the video.</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user"></div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>When is the machine heard running steadily?<br/>
+                                            A. Before the close-up shot of the car's engine<br/>
+                                            B. During the close-up shot of the car's engine<br/>
+                                            C. After the close-up shot of the car's engine<br/>
+                                            D. Only when the light is turned off</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>B. During the close-up shot of the car's engine</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-6-->
+
+
+                <br/>
+                <!--            Example-7 -->
+                <h3 class="title is-4">• Example-7: Proactive Audio-Video Generation</h3>
+                <div class="content has-text-justified">
+
+                    <div class="wrapper svelte-nab2ao"
+                         style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                        <div class="message-wrap svelte-1uvwjgr">
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user"></div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>Hi JavisGPT. I like dark settings.</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                        <p>Wow, dark settings really have such a strong vibe!</p>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="message-row user-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png" alt="avatar-user">
+                                </div>
+                                <div data-testid="user" class="message user svelte-1uvwjgr latest" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                    <p>Combine narration and images to form a complete video
+                                    rendition of this text. A large crowd of concert-goers
+                                    gathered in a setting, raising their hands in the air. The
+                                    audience appears engaged and excited, with various
+                                    individuals visible within the crowd. The scene suggests a
+                                    lively and energetic atmosphere. In the audio, a woman
+                                    can be heard singing and whooping along with music
+                                    playing in the background</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="message-row bot-row svelte-1uvwjgr">
+                                <div class="avatar-container svelte-1uvwjgr">
+                                    <img class="avatar-image svelte-1uvwjgr" src="./static/images/JavisGPT_cropped_trans.png" alt="avatar-bot"></div>
+                                <div data-testid="bot" class="message bot svelte-1uvwjgr latest" dir="ltr" style="border-style: solid;">
+                                    <span class="md svelte-9tftx4 chatbot">
+                                      <p>Sure! I’ll blend the narration with visuals to bring the
+                                        concert scene to life and capture its vibrant energy in a dark setting
+                                        <br/><br/>
+                                        <video src="./static/demos/demo7/proactive.mp4" style="display: inline-block;" width="300" playsinline="" controls=""></video>
+                                    </p>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--          End  Example-7-->
+
+
+                <br/>
+
+
+            </div>
         </div>
 
     </div>
-</section> -->
+</section>
+
 
 
 <section class="section">
